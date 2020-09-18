@@ -1,0 +1,15 @@
+{
+  "name": "homeworkmanagement",
+  "version": "0.1.0",
+  "description": "A Homework Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "Peeps",
+  "license": "ISC"
+}
