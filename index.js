@@ -1,7 +1,7 @@
 const express = require('express');
 const sessionware = require('express-session');
 const exphbs = require('express-handlebars');
-const homeController = require('./controllers/home.controller');
+const homeController = require('./controllers');
 
 const app = express();
 
