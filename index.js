@@ -1,6 +1,7 @@
 const express = require('express');
 const sessionware = require('express-session');
 const exphbs = require('express-handlebars');
+const homeController = require('./controllers/home.controller');
 
 const app = express();
 
@@ -11,13 +12,9 @@ app.use('/static', express.static(__dirname + "/static"));
 
 app.use(express.urlencoded({ extended: false}));
 
-app.get('/', (req, res) => {
-    res.render("docs/index.handlebars", {layout: false, name: "Louis"});
-});
+app.use(express.json());
 
-app.post('/login', (req, res) => {
-    res.json({name: req.body.name});
-});
+app.use('/', homeController);
 
 app.listen(8080, () => {
     console.log('Server listening on http://localhost:8080');

@@ -23,9 +23,9 @@
                     h2.appendChild(document.createTextNode(user.name));
                     }
                 });
-                const formular = new FormData();
-                formular.append('name', name);
-                xhr.send(formular);
+                let formData = new FormData();
+                formData.append("name", name);
+                xhr.send(formData);
             });
         </script>
 
