@@ -1,9 +1,9 @@
 module.exports = {
-    actionIndex = (req, res) =>{
+    actionIndex: (req, res) =>{
         res.render('home/index', {name: "Louis", layout: false});
     },
-    actionLogin = (req, res) => {
+    actionLogin: (req, res) => {
         console.log(req.body.name);
-        res.json({name: "Fritz"});
+        res.json({name: ""});
     }
 }

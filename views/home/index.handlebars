@@ -2,55 +2,47 @@
 
 <html lang="de" dir="ltr">
 
-    <head>
-        <meta charset="UTF-8">
-            <link rel="stylesheet" href="/static/css/style.css">
-        <title>
-            Hausaufgabenverwaltung
-        </title>
-        <script>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<title>
+		Hausaufgabenverwaltung
+	</title>
+	<script>
 
-            window.addEventListener('load', (ev) => {
-                let name = prompt("willkommen bei der Hausaufgabenverwaltung! Gib deinen Namen ein:");
-                const xhr = new XMLHttpRequest();
-                xhr.open("post", "/login");
-                xhr.responseType = "json";
-                xhr.addEventListener("load", (ev) => {
-                    if (ev.target.status === 200) {
-                    let user = ev.target.response;
-                    const h2 = document.querySelector("h2");
-                    h2.removeChild(h2.firstChild);
-                    h2.appendChild(document.createTextNode(user.name));
-                    }
-                });
-                let formData = new FormData();
-                formData.append("name", name);
-                xhr.send(formData);
-            });
-        </script>
+		window.addEventListener('load', (ev) => {
+			let name = prompt("willkommen bei der Hausaufgabenverwaltung! Gib deinen Namen ein:");
+			const xhr = new XMLHttpRequest();
+			xhr.open("post", "/login");
+			xhr.responseType = "json";
+			xhr.addEventListener("load", (ev) => {
+				if (ev.target.status === 200) {
+					console.debug(ev.target.response);
+					let user = ev.target.response;
+					const h2 = document.querySelector("h2");
+					h2.removeChild(h2.firstChild);
+					h2.appendChild(document.createTextNode(user.name));
+				}
+			});
+			let formData = new FormData();
+			formData.append("name", name);
+			xhr.send(formData);
+		});
+	</script>
+</head>
 
-
-            
-
-
-    </head>
-
-    <body>
-        <h1> Willkommen bei der Hausaufgabenverwaltung! </h1>
-        <nav>
-            <ul>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Registrieren</a></li>
-                <li><a href="/faecher">Fächer</a></li>
-
-
-            </ul>
-        </nav>
-
-        <main>
-            <h2>Hallo, {{name}}</h2>
-        </main>
-
-    </body>
+<body>
+	<h1> Willkommen bei der Hausaufgabenverwaltung! </h1>
+	<nav>
+		<ul>
+			<li><a href="/login">Login</a></li>
+			<li><a href="/register">Registrieren</a></li>
+			<li><a href="/faecher">Fächer</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h2>Hallo, {{name}}</h2>
+	</main>
+</body>
 
 </html>
