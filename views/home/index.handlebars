@@ -11,21 +11,16 @@
 	<script>
 
 		window.addEventListener('load', (ev) => {
-			let name = prompt("willkommen bei der Hausaufgabenverwaltung! Gib deinen Namen ein:");
-			const xhr = new XMLHttpRequest();
-			xhr.open("post", "/login");
+			let xhr = new XMLHttpRequest();
+			xhr.open('post', "/login");
 			xhr.responseType = "json";
-			xhr.addEventListener("load", (ev) => {
-				if (ev.target.status === 200) {
-					console.debug(ev.target.response);
-					let user = ev.target.response;
-					const h2 = document.querySelector("h2");
-					h2.removeChild(h2.firstChild);
-					h2.appendChild(document.createTextNode(user.name));
-				}
-			});
+			xhr.onload = (ev) => {
+				console.log(ev.target);
+			}
 			let formData = new FormData();
-			formData.append("name", name);
+			formData.append("test", "test");
+			console.debug(formData);
+			debugger;
 			xhr.send(formData);
 		});
 	</script>
