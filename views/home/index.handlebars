@@ -10,7 +10,7 @@
 	</title>
 	<script>
 
-		window.addEventListener('load', (ev) => {
+		/*window.addEventListener('load', (ev) => {
 			let xhr = new XMLHttpRequest();
 			xhr.open('post', "/login");
 			xhr.responseType = "json";
@@ -22,7 +22,7 @@
 			console.debug(formData);
 			debugger;
 			xhr.send(formData);
-		});
+		});*/
 	</script>
 </head>
 
@@ -37,6 +37,10 @@
 	</nav>
 	<main>
 		<h2>Hallo, {{name}}</h2>
+		<form action="/login" method="post">
+		<input type="text" name="name" value="test">
+		<button type="submit">Absenden</button>
+		</form>
 	</main>
 </body>
 

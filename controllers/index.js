@@ -4,9 +4,6 @@ const home = require('./home.controller');
 
 router.get('/', home.actionIndex);
 
-router.post('/login', express.urlencoded({ extended: true }), (req, res) => {
-    console.log(req.body);
-    res.json(null);
-});
+router.post('/login', home.actionLogin);
 
 module.exports = router;

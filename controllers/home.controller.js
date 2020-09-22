@@ -4,6 +4,6 @@ module.exports = {
     },
     actionLogin: (req, res) => {
         console.log(req.body);
-        res.json({name: ""});
+        res.json({name: req.body.name});
     }
 }
