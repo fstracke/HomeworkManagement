@@ -13,7 +13,7 @@ app.use('/static', express.static(__dirname + "/static"));
 
 app.use(express.urlencoded({ extended: false }))
 
-//app.use(express.json());
+app.use(express.json());
 
 app.use('/', homeController);
 
