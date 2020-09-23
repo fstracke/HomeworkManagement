@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 const sessionware = require('express-session');
 const exphbs = require('express-handlebars');
 const homeController = require('./controllers');
+
+const auth = require('./auth');
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,15 +16,13 @@ app.set("view engine", "handlebars");
 
 app.use('/static', express.static(__dirname + "/static"));
 
-app.use(express.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(express.json());
+app.use(bodyParser.json());
 
-app.use(sessionware({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false
-}));
+app.use(multer().none());
+
+auth(app);
 
 app.use('/', homeController);
 
