@@ -8,22 +8,6 @@
 	<title>
 		Hausaufgabenverwaltung
 	</title>
-	<script>
-
-		/*window.addEventListener('load', (ev) => {
-			let xhr = new XMLHttpRequest();
-			xhr.open('post', "/login");
-			xhr.responseType = "json";
-			xhr.onload = (ev) => {
-				console.log(ev.target);
-			}
-			let formData = new FormData();
-			formData.append("test", "test");
-			console.debug(formData);
-			debugger;
-			xhr.send(formData);
-		});*/
-	</script>
 </head>
 
 <body>
@@ -36,11 +20,8 @@
 		</ul>
 	</nav>
 	<main>
-		<h2>Hallo, {{name}}</h2>
-		<form action="/login" method="post">
-		<input type="text" name="name" value="test">
-		<button type="submit">Absenden</button>
-		</form>
+		<h1>Willkommen zur Hausaufgabenverwaltung.</h1>
+		<p>Melden sie sich <a class="text-link" href="/login">hier</a> an, um auf das Program zugreifen zu können.</p>
 	</main>
 </body>
 
