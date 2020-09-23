@@ -1,9 +1,9 @@
 module.exports = {
     actionIndex: (req, res) =>{
+        req.session['page_views']=1
         res.render('home/index', {name: "Louis", layout: false});
     },
     actionLogin: (req, res) => {
-        console.log(req.body);
-        res.json({name: req.body.name});
+        res.render('login/index', {layout: false});
     }
 }

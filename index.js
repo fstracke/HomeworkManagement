@@ -4,6 +4,8 @@ const sessionware = require('express-session');
 const exphbs = require('express-handlebars');
 const homeController = require('./controllers');
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 app.engine("handlebars", exphbs());
@@ -14,6 +16,12 @@ app.use('/static', express.static(__dirname + "/static"));
 app.use(express.urlencoded({ extended: false }))
 
 app.use(express.json());
+
+app.use(sessionware({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use('/', homeController);
 

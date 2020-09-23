@@ -4,6 +4,6 @@ const home = require('./home.controller');
 
 router.get('/', home.actionIndex);
 
-router.post('/login', home.actionLogin);
+router.get('/login', home.actionLogin);
 
 module.exports = router;
