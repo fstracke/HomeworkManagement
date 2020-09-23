@@ -27,7 +27,7 @@ nav {
 
 ul {
     height: 100%;
-    width: 100%;
+    width: calc(100% - 40px);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -39,7 +39,8 @@ ul {
 }
 
 li {
-    margin-left: 1.6em;
+    padding: 0 2em;
+    flex: none;
     color: teal;
 }
 
@@ -50,4 +51,9 @@ a {
 }
 a:hover {
     color: wheat;
+}
+
+main {
+    width: calc(100% - 4em);
+    padding: 2em;
 }
