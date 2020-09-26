@@ -7,11 +7,14 @@
 	<title>Log-In</title>
 
 	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 		html, body {
 			height: 100%;
 			
 			margin: 0;
 			padding: 0;
+			font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		}
 		body {
 			background-image: url('/static/img/login.jpg');
@@ -39,9 +42,46 @@
 			background-color: rgba(240,240, 240,0.7);
 			box-shadow: 10px 10px rgba(230, 230, 230, 0.3);
 		}
-		ul{
-			list-style: none;
+		h1 {
+			margin: 1em 0 .2em 0;
 		}
+		ul{
+			padding: 0;
+			list-style: none;
+			width: 100%;
+		}
+		form {
+			width: 80%;
+		}
+		li {
+			width: 100%;
+		}
+		label {
+			display: inline-block;
+			width: 30%;
+		}
+		input {
+			font-family: 'Roboto', sans-serif;
+			border: 1px solid rgba(50, 50, 50, 0.3);
+			border-radius: 40px;
+			width: 60%;
+			height: 15%;
+			padding-left: 10px;
+			margin: .3em 0 .3em auto;
+		}
+		.buttons {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			margin: .3em 0;
+		}
+		button {
+			width: 40%;
+			margin: 0 .2em;
+		}
+		
 	</style>
 </head>
 
@@ -60,8 +100,10 @@
 						<input type="password" name="password" id="password" placeholder="Passwort">
 					</li>
 					<li>
-						<button type="reset">Eingabe löschen</button>
-						<button type="submit">Anmelden</button>
+						<div class="buttons"> 
+							<button type="reset">Eingabe löschen</button>
+							<button type="submit">Anmelden</button>
+						</div>
 					</li>
 				</ul>
 
