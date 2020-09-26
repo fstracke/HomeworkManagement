@@ -7,6 +7,10 @@ const ensureLogin = require('connect-ensure-login');
 router.get('/', home.actionIndex);
 
 router.get('/login', home.actionLogin);
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
 
 router.post('/login/auth', passport.authenticate('local', {failureRedirect: '/login'}), (req, res) => {
     res.redirect('/schule');

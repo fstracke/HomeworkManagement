@@ -4,6 +4,7 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/static/css/style.css">
 	<title>
 		Hausaufgabenverwaltung
@@ -15,29 +16,68 @@
 	<header>
 		<h1>{{user.name}}, {{user.firstname}}</h1>
 		<h2>{{currentRegister}}</h2>
-	</header>
-	<nav>
+		<nav>
 		<ul>
-			<li>Logout</li>
+			<li><a href="/logout">Logout</a></li>
 			{{#each register}}
 			<li><a href="{{this.link}}">{{this.title}}</a></li>
 			{{/each}}
 		</ul>
 	</nav>
-	<main></main>
+	</header>
+	<aside>
+		<ul>
+			<li>
+				<button>Add</button>
+			</li>
+			<li>
+				<button>Remove</button>
+			</li>
+			<li>
+				<button>Edit</button>
+			</li>
+			<li>
+				<button>Close</button>
+			</li>
+		</ul>
+	</aside>
+	<main>
+		<ul>
+			<li>
+				<div>Task1</div>
+			</li>
+			<li>
+				<div>Task1</div>
+			</li>
+			<li>
+				<div>Task1</div>
+			</li>
+			<li>
+				<div>Task1</div>
+			</li>
+			<li>
+				<div>Task1</div>
+			</li>
+		</ul>
+	</main>
+	<footer><small>By Fritz Stracke</small></footer>
 	{{else}}
 	<header>
 		<h1> Willkommen bei der Hausaufgabenverwaltung! </h1>
+		<nav>
+			<ul>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</nav>
 	</header>
-	<nav>
-		<ul>
-			<li><a href="/login">Login</a></li>
-		</ul>
-	</nav>
+	<aside></aside>
 	<main>
 		<h1>Willkommen zur Hausaufgabenverwaltung.</h1>
 		<p>Melden sie sich <a class="text-link" href="/login">hier</a> an, um auf das Program zugreifen zu können.</p>
 	</main>
+	<footer>
+		By Fritz Stracke
+	</footer>
 	{{/if}}
 </body>
 
