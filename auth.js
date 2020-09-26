@@ -8,7 +8,7 @@ module.exports = app => {
         const user = {
             id: id,
             username: "fstracke",
-            lastname: "Stracke"
+            name: "Stracke"
         };
         done(null, user);
     })
@@ -18,7 +18,7 @@ module.exports = app => {
             done(null, {
                 id: '1',
                 username: 'fstracke',
-                lastname: 'Stracke'
+                name: 'Stracke'
             });
         } else {
             done('Not allowed');
