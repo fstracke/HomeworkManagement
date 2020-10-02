@@ -11,7 +11,7 @@ module.exports = app => {
             name: "Stracke"
         };
         done(null, user);
-    })
+    });
 
     passport.use(new LocalStrategy((username, password, done) => {
         if (username === 'fstracke' && password === 'test'){
@@ -23,14 +23,13 @@ module.exports = app => {
         } else {
             done('Not allowed');
         }
-    }))
+    }));
 
     app.use(sessionware({
         secret: process.env.SECRET,
         resave: false,
         saveUninitialized: false
-    })
-    );
+    }));
 
     app.use(passport.initialize());
     app.use(passport.session());
