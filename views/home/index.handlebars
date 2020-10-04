@@ -18,10 +18,12 @@
 		<h2>{{currentRegister}}</h2>
 		<nav>
 		<ul>
-			<li><a href="/logout">Logout</a></li>
+			
 			{{#each register}}
 			<li><a href="{{this.link}}">{{this.title}}</a></li>
 			{{/each}}
+			<li><a href="/logout">Logout</a></li>
+			<li><a href="/settings" rel="noopener noreferrer">Settings</a></li>
 		</ul>
 	</nav>
 	</header>

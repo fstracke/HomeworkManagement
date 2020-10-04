@@ -7,6 +7,6 @@ module.exports = {
         res.render('login/index', {layout: false});
     },
     actionRegister: (req, res) => {
-        res.render('home/index', {layout: false, user: req.user, currentRegister: req.params.register, register: [{link: "/schule", title: "Schule"}]})
+        res.render('home/index', {layout: false, user: req.user, currentRegister: req.params.register, register: [{link: "/Schule", title: "Schule"}]})
     }
 }
